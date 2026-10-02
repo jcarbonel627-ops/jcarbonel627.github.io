@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración | Law Firm "CARBONEL"</title>
+    
+    <!-- Fuentes y Estilos -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="admin-panel.css">
+</head>
+<body>
+
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1><i class="fas fa-user-shield"></i> Panel de Control Administrador</h1>
+            <button class="btn-logout" id="btnLogout"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</button>
+        </div>
+
+        <p class="admin-descripcion-general">Desde aquí puedes actualizar la información de contacto y gestionar (crear, editar o eliminar) los casos de éxito de la web.</p>
+
+        <!-- CONFIGURACIÓN GENERAL -->
+        <form id="configForm" class="admin-form-config">
+            <div class="form-group">
+                <label for="txtTelefono"><i class="fas fa-phone"></i> Teléfono / Central de Urgencias 24/7:</label>
+                <input type="text" id="txtTelefono" class="form-control" value="906 380 881">
+            </div>
+
+            <div class="form-group">
+                <label for="txtCorreo"><i class="fas fa-envelope"></i> Correo Electrónico Institucional:</label>
+                <input type="email" id="txtCorreo" class="form-control" value="jcarbonel627@gmail.com">
+            </div>
+
+            <div class="form-group">
+                <label for="txtDireccion"><i class="fas fa-map-marker-alt"></i> Dirección de la Oficina:</label>
+                <input type="text" id="txtDireccion" class="form-control" value="Manuel María Izaga 376A, Chiclayo">
+            </div>
+
+            <button type="submit" class="btn-save"><i class="fas fa-save"></i> Guardar Cambios Generales</button>
+        </form>
+
+        <!-- FORMULARIO: REGISTRAR / EDITAR CASO DE ÉXITO -->
+        <div class="admin-card">
+            <h3 id="formTituloAccion" class="admin-card-titulo">Registrar Nuevo Caso de Éxito</h3>
+            
+            <form id="formNuevoCaso">
+                <div class="admin-campo-grupo">
+                    <label class="admin-label">Materia Legal o Área:</label>
+                    <input type="text" id="materiaCaso" class="admin-input" placeholder="Ej. Derecho Penal o Centro de Conciliación" required>
+                </div>
+
+                <div class="admin-campo-grupo">
+                    <label class="admin-label">Título del Caso:</label>
+                    <input type="text" id="tituloCaso" class="admin-input" placeholder="Ej. Absolución en investigación preliminar" required>
+                </div>
+
+                <div class="admin-campo-grupo">
+                    <label class="admin-label">Descripción o Resultado:</label>
+                    <textarea id="descripcionCaso" class="admin-textarea" placeholder="Breve detalle de cómo se resolvió el caso..." rows="3" required></textarea>
+                </div>
+
+                <div class="admin-campo-grupo-archivo">
+                    <label class="admin-label">Imagen Referencial (Opcional):</label>
+                    <input type="file" id="imagenCaso" accept="image/*" class="admin-input-file">
+                </div>
+
+                <div class="admin-botones-fila">
+                    <button type="submit" id="btnGuardarCaso" class="btn-guardar-caso"><i class="fas fa-plus-circle"></i> Guardar y Publicar Caso</button>
+                    <button type="button" id="btnCancelarEdicion" class="btn-cancelar-edicion">Cancelar Edición</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- SECCIÓN: LISTA DE CASOS PUBLICADOS (EDITAR / ELIMINAR) -->
+        <div class="admin-card admin-card-borde">
+            <h3 class="admin-card-titulo"><i class="fas fa-list"></i> Casos Registrados (Gestión)</h3>
+            <p class="admin-subtexto-secundario">Edita o elimina los casos que se muestran actualmente en la página web principal.</p>
+            
+            <div id="listaCasosAdmin" class="admin-lista-casos">
+                <!-- Dinámico -->
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        // Proteger ruta
+        if (sessionStorage.getItem("adminAuth") !== "true") {
+            alert("Acceso no autorizado. Por favor inicia sesión.");
+            window.location.href = "login.html";
+        }
+
+        const STORAGE_CASOS_KEY = "carbonel_casos_exito";
+        let indiceEdicion = null; // Controla si estamos creando o editando
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Cargar datos de contacto
+            if (localStorage.getItem("webTelefono")) document.getElementById("txtTelefono").value = localStorage.getItem("webTelefono");
+            if (localStorage.getItem("webCorreo")) document.getElementById("txtCorreo").value = localStorage.getItem("webCorreo");
+            if (localStorage.getItem("webDireccion")) document.getElementById("txtDireccion").value = localStorage.getItem("webDireccion");
+
+            renderizarCasosAdmin();
+        });
+
+        document.getElementById("btnLogout").addEventListener("click", function() {
+            sessionStorage.removeItem("adminAuth");
+            window.location.href = "index.html";
+        });
+
+        document.getElementById("configForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            localStorage.setItem("webTelefono", document.getElementById("txtTelefono").value.trim());
+            localStorage.setItem("webCorreo", document.getElementById("txtCorreo").value.trim());
+            localStorage.setItem("webDireccion", document.getElementById("txtDireccion").value.trim());
+            alert("¡Datos de la firma actualizados exitosamente!");
+        });
+
+        // Guardar o Actualizar Caso
+        const formNuevoCaso = document.getElementById("formNuevoCaso");
+        formNuevoCaso.addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const materia = document.getElementById("materiaCaso").value.trim();
+            const titulo = document.getElementById("tituloCaso").value.trim();
+            const descripcion = document.getElementById("descripcionCaso").value.trim();
+            const inputImagen = document.getElementById("imagenCaso");
+
+            let casosExito = JSON.parse(localStorage.getItem(STORAGE_CASOS_KEY)) || [];
+
+            function guardarDatos(imagenBase64) {
+                if (indiceEdicion !== null) {
+                    // MODO EDICIÓN: Si no se subió nueva imagen, mantener la anterior
+                    casosExito[indiceEdicion] = {
+                        materia,
+                        titulo,
+                        descripcion,
+                        imagen: imagenBase64 || casosExito[indiceEdicion].imagen || ""
+                    };
+                    alert("¡Caso actualizado correctamente!");
+                    cancelarEdicion();
+                } else {
+                    // MODO CREACIÓN
+                    casosExito.push({
+                        materia,
+                        titulo,
+                        descripcion,
+                        imagen: imagenBase64 || ""
+                    });
+                    alert("¡Caso registrado y publicado con éxito!");
+                }
+
+                localStorage.setItem(STORAGE_CASOS_KEY, JSON.stringify(casosExito));
+                formNuevoCaso.reset();
+                renderizarCasosAdmin();
+            }
+
+            // Procesar la imagen si se seleccionó una
+            if (inputImagen.files && inputImagen.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    guardarDatos(e.target.result);
+                };
+                reader.readAsDataURL(inputImagen.files[0]);
+            } else {
+                guardarDatos(null);
+            }
+        });
+
+        // Renderizar lista en Admin con botones Editar y Eliminar
+        function renderizarCasosAdmin() {
+            const contenedorLista = document.getElementById("listaCasosAdmin");
+            if (!contenedorLista) return;
+
+            let casosExito = JSON.parse(localStorage.getItem(STORAGE_CASOS_KEY)) || [];
+
+            if (casosExito.length === 0) {
+                contenedorLista.innerHTML = `<p style="color: #8a99ad; font-size: 14px;">No hay casos registrados.</p>`;
+                return;
+            }
+
+            contenedorLista.innerHTML = "";
+            casosExito.forEach((caso, index) => {
+                const item = document.createElement("div");
+                item.style.background = "#080e1d";
+                item.style.border = "1px solid #303e5c";
+                item.style.padding = "15px 20px";
+                item.style.borderRadius = "6px";
+                item.style.display = "flex";
+                item.style.justifyContent = "space-between";
+                item.style.alignItems = "center";
+                item.style.gap = "20px";
+
+                item.innerHTML = `
+                    <div style="display: flex; align-items: center; gap: 15px; flex-grow: 1;">
+                        ${caso.imagen ? `<img src="${caso.imagen}" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px; border: 1px solid #d4af37;">` : ''}
+                        <div>
+                            <span style="color: #d4af37; font-size: 11px; font-weight: 700; text-transform: uppercase;">${caso.materia}</span>
+                            <h4 style="color: #fff; font-size: 16px; margin: 4px 0; font-family: 'Playfair Display', serif;">${caso.titulo}</h4>
+                            <p style="color: #94a3b8; font-size: 13px; margin: 0; line-height: 1.4;">${caso.descripcion}</p>
+                        </div>
+                    </div>
+                    <div style="display: flex; gap: 8px;">
+                        <button onclick="cargarParaEditar(${index})" style="background: #3b82f6; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 13px;"><i class="fas fa-edit"></i> Editar</button>
+                        <button onclick="eliminarCaso(${index})" style="background: #e74c3c; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-size: 13px;"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                    </div>
+                `;
+                contenedorLista.appendChild(item);
+            });
+        }
+
+        // Cargar datos en el formulario para editar
+        window.cargarParaEditar = function(index) {
+            let casosExito = JSON.parse(localStorage.getItem(STORAGE_CASOS_KEY)) || [];
+            const caso = casosExito[index];
+
+            document.getElementById("materiaCaso").value = caso.materia;
+            document.getElementById("tituloCaso").value = caso.titulo;
+            document.getElementById("descripcionCaso").value = caso.descripcion;
+
+            indiceEdicion = index;
+            document.getElementById("formTituloAccion").innerText = "Editar Caso de Éxito";
+            document.getElementById("btnGuardarCaso").innerHTML = `<i class="fas fa-save"></i> Actualizar Caso`;
+            document.getElementById("btnCancelarEdicion").style.display = "inline-block";
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function cancelarEdicion() {
+            indiceEdicion = null;
+            formNuevoCaso.reset();
+            document.getElementById("formTituloAccion").innerText = "Registrar Nuevo Caso de Éxito";
+            document.getElementById("btnGuardarCaso").innerHTML = `<i class="fas fa-plus-circle"></i> Guardar y Publicar Caso`;
+            document.getElementById("btnCancelarEdicion").style.display = "none";
+        }
+
+        document.getElementById("btnCancelarEdicion").addEventListener("click", cancelarEdicion);
+
+        window.eliminarCaso = function(index) {
+            if (confirm("¿Estás seguro de que deseas eliminar este caso?")) {
+                let casosExito = JSON.parse(localStorage.getItem(STORAGE_CASOS_KEY)) || [];
+                casosExito.splice(index, 1);
+                localStorage.setItem(STORAGE_CASOS_KEY, JSON.stringify(casosExito));
+                renderizarCasosAdmin();
+                if (indiceEdicion === index) cancelarEdicion();
+                alert("Caso eliminado correctamente.");
+            }
+        };
+    </script>
+</body>
+</html>

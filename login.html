@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso Administrador | Law Firm "CARBONEL"</title>
+    
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Hoja de Estilos del Login separada -->
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+
+    <div class="login-card">
+        <div class="login-header">
+            <div class="logo-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+            <h2>Acceso Admin</h2>
+            <p style="color: #94a3b8; font-size: 0.85rem;">Panel de Gestión Exclusivo</p>
+        </div>
+
+        <form id="adminLoginForm">
+            <div class="form-group">
+                <label for="adminEmail"><i class="fa-solid fa-envelope"></i> Correo Electrónico</label>
+                <input type="email" id="adminEmail" class="form-control" placeholder="admin@carbonel.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="adminPassword"><i class="fa-solid fa-lock"></i> Contraseña</label>
+                <input type="password" id="adminPassword" class="form-control" placeholder="••••••••••••" required>
+            </div>
+
+            <button type="submit" class="btn-login">Iniciar Sesión</button>
+        </form>
+
+        <div class="back-home">
+            <a href="index.html"><i class="fa-solid fa-arrow-left"></i> Volver a la página principal</a>
+        </div>
+    </div>
+
+    <!-- Script de validación -->
+    <script>
+        document.getElementById("adminLoginForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            // .trim() para evitar espacios en blanco accidentales
+            const correoIngresado = document.getElementById("adminEmail").value.trim();
+            const passwordIngresado = document.getElementById("adminPassword").value.trim();
+
+            // 🔒 CREDENCIALES DE ACCESO DEL ADMINISTRADOR
+            const correoAdmin = "carbonel@hotmail.com";
+            const passwordAdmin = "carbonel123";
+
+            if (correoIngresado === correoAdmin && passwordIngresado === passwordAdmin) {
+                sessionStorage.setItem("adminAuth", "true");
+                alert("¡Bienvenido, Administrador! Redirigiendo al panel...");
+                window.location.href = "admin-panel.html"; 
+            } else {
+                alert("Correo o contraseña incorrectos. Acceso denegado.");
+                document.getElementById("adminPassword").value = "";
+                document.getElementById("adminPassword").focus();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,191 @@
+body {
+            background-color: #0B192C;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .admin-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #112240;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #D4AF37;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+        }
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        .admin-header h1 {
+            font-family: 'Cinzel', serif;
+            color: #D4AF37;
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        .btn-logout {
+            background: #ef4444;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #E6F1FF;
+            font-weight: 500;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            background: #0B192C;
+            border: 1px solid #334155;
+            color: #fff;
+            border-radius: 5px;
+            outline: none;
+        }
+        .form-control:focus {
+            border-color: #D4AF37;
+        }
+        .btn-save {
+            background: #D4AF37;
+            color: #0B192C;
+            padding: 12px 20px;
+            font-weight: 700;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .btn-save:hover {
+            background: #c5a028;
+        }
+
+
+
+
+/* ==========================================
+   ESTILOS ADICIONALES PARA EL PANEL DE CONTROL
+   ========================================== */
+
+.admin-descripcion-general {
+    color: #94a3b8;
+    margin-bottom: 25px;
+}
+
+.admin-form-config {
+    margin-bottom: 40px;
+}
+
+.admin-card {
+    background: #0f1a36;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #d4af37;
+    margin-bottom: 40px;
+}
+
+.admin-card-borde {
+    border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.admin-card-titulo {
+    color: #d4af37;
+    margin-bottom: 15px;
+    font-family: 'Playfair Display', serif;
+}
+
+.admin-campo-grupo {
+    margin-bottom: 15px;
+}
+
+.admin-campo-grupo-archivo {
+    margin-bottom: 20px;
+}
+
+.admin-label {
+    color: #fff;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.admin-input,
+.admin-textarea {
+    width: 100%;
+    padding: 10px;
+    background: #080e1d;
+    border: 1px solid #303e5c;
+    color: #fff;
+    border-radius: 4px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.admin-textarea {
+    resize: vertical;
+}
+
+.admin-input-file {
+    width: 100%;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+.admin-botones-fila {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-guardar-caso {
+    background: #d4af37;
+    color: #080e1d;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-guardar-caso:hover {
+    background: #e6c555;
+}
+
+.btn-cancelar-edicion {
+    background: #475569;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    display: none; /* Se activa mediante JS al editar */
+    transition: background 0.3s ease;
+}
+
+.btn-cancelar-edicion:hover {
+    background: #5d6d85;
+}
+
+.admin-subtexto-secundario {
+    color: #94a3b8;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.admin-lista-casos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

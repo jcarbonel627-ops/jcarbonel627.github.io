@@ -1,0 +1,644 @@
+<!-- ==========================================
+     ARCHIVO: index.html
+     PÁGINA PRINCIPAL - LAW FIRM "CARBONEL"
+     ========================================== -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Law Firm Carbonel - Consultoría Jurídica & Defensa Legal. Especialistas en Derecho Penal 24/7, Civil, Familia, Administrativo y Municipal en Chiclayo.">
+    <title>Law Firm "CARBONEL" | Consultoría Jurídica & Defensa Legal</title>
+    
+    <!-- Fuentes de Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Hoja de Estilos Externa -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- BARA SUPERIOR DE CONTACTO (TOPBAR) -->
+    <div class="topbar">
+        <div class="container topbar-container">
+            <div class="topbar-info">
+                <a id="viewTelLink" href="tel:+51906380881"><i class="fa-solid fa-phone"></i> Central / Urgencias 24/7: <strong id="viewTelefono">906 380 881</strong></a>
+                
+                <!-- Agregamos id="viewMailLink" y id="viewCorreo" -->
+                <a id="viewMailLink" href="mailto:jcarbonel627@gmail.com"><i class="fa-solid fa-envelope"></i> <span id="viewCorreo">jcarbonel627@gmail.com</span></a>
+                
+                <!-- Agregamos id="viewDireccion" -->
+                <span><i class="fa-solid fa-location-dot"></i> <span id="viewDireccion">Manuel María Izaga 376A, Chiclayo</span></span>
+            </div>
+            <div class="topbar-social">
+                <a href="https://www.facebook.com/profile.php?id=100088370552320" target="_blank" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/estudiojuridicocarbonel/?hl=es" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://wa.me/51906380881" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ENCABEZADO Y NAVEGACIÓN -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                <div class="logo-text">
+                    <span class="brand-title">Law Firm "CARBONEL"</span>
+                    <span class="brand-tagline">Abogados Conciliadores Árbitros Peritos</span>
+                </div>
+            </a>
+
+            <nav class="navbar" id="navbar">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link active">Inicio</a></li>
+                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="#mision-vision" class="nav-link">Filosofía Institucional</a></li>
+                    <li><a href="#servicios" class="nav-link">Servicios</a></li>
+                    <li><a href="#noticias" class="nav-link">Orientación</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                    <!-- NUEVO ENLACE DE INGRESO ADMIN AL LADO DE CONTACTO -->
+                     <li><a href="login.html" class="nav-link" style="color: #D4AF37; font-weight: 600;"><i class="fas fa-lock"></i> Ingresar</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-cta">
+                <a href="https://wa.me/51906380881?text=Hola,%20deseo%20solicitar%20una%20consulta%20gratuita." class="btn btn-gold" target="_blank">
+                    <i class="fa-solid fa-calendar-check"></i> Consulta Gratuita
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir Menú">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+
+
+
+
+<!-- HERO SECTION DINÁMICO Y MODERNO -->
+<section class="hero" id="inicio">
+    <!-- Carrusel de fondos controlado desde el HTML -->
+    <div class="hero-bg-slider">
+        <!-- Cambia 'logo2.jpg' por el nombre de tu primera imagen -->
+        <div class="bg-slide slide-1" style="background-image: url('logo3.jpg');"></div>
+        
+        <!-- Cambia 'tu-otra-imagen.jpg' por el nombre de tu segunda foto -->
+        <div class="bg-slide slide-2" style="background-image: url('grupocarbonel.jpg');"></div>
+    </div>
+    
+    <!-- Capa oscura de profundidad -->
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-container">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                ATENCIÓN PENAL DE EMERGENCIA 24/7 EN COMISARÍAS Y JUZGADOS
+            </div>
+
+            <h1 class="hero-title">
+                TU CONFIANZA, <br><span class="text-gold">NUESTRA DEFENSA</span>
+            </h1>
+
+            <p class="hero-subtitle">
+                Defendemos tus derechos con compromiso, estrategia y excelencia. Más de 30 años de experiencia respaldando cada caso jurídico.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="https://wa.me/51906380881" target="_blank" class="btn-primary-red">¿Detenido? Asistencia 24 Horas</a>
+                <a href="#servicios" class="btn-outline-gold">Ver Especialidades &rarr;</a>
+            </div>
+        </div>
+
+        <div class="hero-features">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-balance-scale"></i></div>
+                <div>
+                    <h4>Defensa Inmediata</h4>
+                    <p>Intervención experta desde el primer minuto en comisaría.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-award"></i></div>
+                <div>
+                    <h4>Experiencia Comprobada</h4>
+                    <p>Trayectoria sólida defendiendo causas complejas desde 1992.</p>
+                </div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-chess-knight"></i></div>
+                <div>
+                    <h4>Estrategia Rigurosa</h4>
+                    <p>Planteamiento procesal personalizado para cada patrocinado.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- SECCIÓN NOSOTROS -->
+    <section class="section nosotros" id="nosotros">
+        <div class="container grid-2">
+            <div class="nosotros-img-box">
+                <div class="img-wrapper">
+                    <img src="grupocarbonel.jpg" alt="Oficina de Law Firm Carbonel">
+                </div>
+                <div class="nosotros-experience-badge">
+                    <span class="exp-number">30+</span>
+                    <span class="exp-text">Años de Trayectoria Profesional</span>
+                </div>
+            </div>
+            <div class="nosotros-content">
+                <div class="section-tag">NUESTRA FIRMA</div>
+                <h2 class="section-title">Compromiso Legal Inquebrantable y Soluciones Efectivas</h2>
+                <p class="section-desc">En <strong>Law Firm "CARBONEL"</strong> nos dedicamos a brindar consultoría jurídica integral y patrocinio legal especializado. Entendemos la importancia de proteger la libertad, la familia y el patrimonio de nuestros patrocinados.</p>
+                <p class="section-desc">Nuestra firma se distingue por la inmediatez en casos de urgencia penal, así como por un análisis profundo y riguroso en procedimientos civiles, administrativos y de familia.</p>
+
+                <div class="values-list">
+                    <div class="value-item">
+                        <i class="fa-solid fa-check"></i>
+                        <span><strong>Ética y Transparencia:</strong> Asesoría clara y objetiva sobre el estado real de su caso.</span>
+                    </div>
+                    <div class="value-item">
+                        <i class="fa-solid fa-check"></i>
+                        <span><strong>Disponibilidad Total:</strong> Equipo capacitado para respuesta urgente las 24 horas del día.</span>
+                    </div>
+                    <div class="value-item">
+                        <i class="fa-solid fa-check"></i>
+                        <span><strong>Confidencialidad Absoluta:</strong> Resguardo riguroso de la información de nuestros clientes.</span>
+                    </div>
+                </div>
+
+                <a href="#mision-vision" class="btn btn-gold">Conocer Nuestra Filosofía</a>
+            </div>
+        </div>
+    </section>
+
+
+
+<!-- SECCIÓN MISIÓN Y VISIÓN -->
+<section class="section mision-vision-dinamica" id="mision-vision">
+    <div class="container">
+        <div class="section-header text-center light-text">
+            <span class="section-tag">FILOSOFÍA INSTITUCIONAL</span>
+            <h2 class="section-title">Misión y Visión</h2>
+            <p class="section-subtitle">Los pilares que guían nuestro ejercicio profesional y defensa jurídica en Chiclayo y el país.</p>
+        </div>
+
+        <div class="mv-grid-proporcional">
+            <!-- TARJETA MISIÓN -->
+            <div class="mv-card-adaptada">
+                <div class="mv-texto-box">
+                    <div>
+                        <div class="mv-icon"><i class="fas fa-balance-scale"></i></div>
+                        <h3>NUESTRA MISIÓN</h3>
+                        <p>Brindar asesoría jurídica integral, patrocinio legal especializado y soluciones de conciliación con los más altos estándares de ética, rigor estratégico y oportunidad. Nos comprometemos a defender con firmeza la libertad, el patrimonio y los derechos fundamentales de nuestros patrocinados.</p>
+                    </div>
+                    <span class="mv-footer-tag"><i class="fas fa-check-circle"></i> DEFENSA OPORTUNA Y ESTRATÉGICA</span>
+                </div>
+                <div class="mv-imagen-lateral">
+                    <img src="doctorleyendo.jpg" alt="Misión Law Firm Carbonel">
+                </div>
+            </div>
+
+            <!-- TARJETA VISIÓN -->
+            <div class="mv-card-adaptada">
+                <div class="mv-texto-box">
+                    <div>
+                        <div class="mv-icon"><i class="fas fa-eye"></i></div>
+                        <h3>NUESTRA VISIÓN</h3>
+                        <p>Consolidarnos como el estudio jurídico y centro de conciliación líder y de referencia indiscutible en la región norte del país, reconocido por nuestra excelencia procesal, sólida doctrina legal, inmediatez en la atención 24/7 y absoluta confianza con nuestros clientes.</p>
+                    </div>
+                    <span class="mv-footer-tag"><i class="fas fa-check-circle"></i> LIDERAZGO Y EXCELENCIA JURÍDICA</span>
+                </div>
+                <div class="mv-imagen-lateral">
+                    <img src="doctores.jpg" alt="Visión Law Firm Carbonel">
+                </div>
+            </div>
+
+
+
+                        <div class="mv-card-adaptada">
+                <div class="mv-texto-box">
+                    <div>
+                        <div class="mv-icon"><i class="fas fa-eye"></i></div>
+                        <h3>NUESTRO COMPROMISO</h3>
+                        <p> Asumir cada caso con la más alta responsabilidad, ética profesional y rigor jurídico. Nuestro compromiso es velar estrictamente por los derechos y el patrimonio de nuestros clientes, ofreciendo soluciones legales efectivas y un acompañamiento permanente que genere absoluta confianza y tranquilidad.</p>
+                    </div>
+                    <span class="mv-footer-tag"><i class="fas fa-check-circle"></i> ÉTICA Y LEALTAD PROFESIONAL</span>
+                </div>
+                <div class="mv-imagen-lateral">
+                    <img src="doctor.jpeg" alt="Visión Law Firm Carbonel">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+    <!-- SECCIÓN ÁREAS DE PRÁCTICA / SERVICIOS -->
+    <section class="section servicios" id="servicios">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="section-tag">ÁREAS DE PRÁCTICA</div>
+                <h2 class="section-title">Servicios Jurídicos Especializados</h2>
+                <p class="section-subtitle">Brindamos patrocinio y representación legal con los más altos estándares de calidad.</p>
+            </div>
+
+            <div class="services-grid">
+
+
+                <!-- Servicio 1 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-handcuffs"></i></div>
+                    <h3 class="service-title">Derecho Penal & Flagrancia</h3>
+                    <p class="service-desc">Defensa integral en investigaciones preliminares, detenciones policiales, hábitos corpus, apelación de medidas cautelares y audiencias de prisión preventiva.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-chevron-right"></i> Asistencia Inmediata en Comisarías</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Delitos de Conducción en Ebriedad</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Delitos contra el Patrimonio</li>
+                    </ul>
+                    <a href="https://wa.me/51906380881?text=Consulta%20sobre%20Derecho%20Penal" class="service-link" target="_blank">Consultar por WhatsApp <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <h3 class="service-title">Derecho Civil & Patrimonio</h3>
+                    <p class="service-desc">Protección y defensa de sus derechos de propiedad, obligaciones, cobranzas, indemnizaciones por daños y perjuicios, y resolución de disputas contractuales.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-chevron-right"></i> Prescripción Adquisitiva</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Desalojos y Reivindicación</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Incumplimiento de Contratos</li>
+                    </ul>
+                    <a href="https://wa.me/51906380881?text=Consulta%20sobre%20Derecho%20Civil" class="service-link" target="_blank">Consultar por WhatsApp <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-users-between-lines"></i></div>
+                    <h3 class="service-title">Derecho de Familia & Sucesiones</h3>
+                    <p class="service-desc">Acompañamiento humano y técnico en la solución de dilemas familiares y ordenamiento sucesorio para la protección de sus seres queridos.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-chevron-right"></i> Divorcios (Mutuo Acuerdo / Contencioso)</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Alimentos, Tenencia y Régimen de Visitas</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Sucesiones Intestadas y Testamentos</li>
+                    </ul>
+                    <a href="https://wa.me/51906380881?text=Consulta%20sobre%20Derecho%20de%20Familia" class="service-link" target="_blank">Consultar por WhatsApp <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-building-columns"></i></div>
+                    <h3 class="service-title">Derecho Administrativo & Municipal</h3>
+                    <p class="service-desc">Defensa frente a sanciones administrativas, procedimientos ante municipalidades, organismos del Estado y recursos de impugnación.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-chevron-right"></i> Procesos ante Municipalidades</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Procedimientos Sancionadores</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Licencias y Regulaciones</li>
+                    </ul>
+                    <a href="https://wa.me/51906380881?text=Consulta%20sobre%20Derecho%20Administrativo" class="service-link" target="_blank">Consultar por WhatsApp <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-file-contract"></i></div>
+                    <h3 class="service-title">Redacción e Impugnación de Contratos</h3>
+                    <p class="service-desc">Elaboración y revisión minuciosa de todo tipo de instrumentos contractuales para prevenir contingencias jurídicas futuras.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-chevron-right"></i> Contratos Comerciales y Civiles</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Adendas y Acuerdos Marco</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Auditoría Jurídica de Documentos</li>
+                    </ul>
+                    <a href="https://wa.me/51906380881?text=Consulta%20sobre%20Redaccion%20de%20Contratos" class="service-link" target="_blank">Consultar por WhatsApp <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <!-- Servicio 6 -->
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-gavel"></i></div>
+                    <h3 class="service-title">Patrocinio Judicial Completo</h3>
+                    <p class="service-desc">Representación contundente en todas las instancias judiciales, elaboración de recursos de apelación y actuaciones en casación.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-chevron-right"></i> Estrategia Procesal Personalizada</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Seguimiento Permanente de Expedientes</li>
+                        <li><i class="fa-solid fa-chevron-right"></i> Audiencias y Alegatos</li>
+                    </ul>
+                    <a href="https://wa.me/51906380881?text=Consulta%20sobre%20Patrocinio%20Judicial" class="service-link" target="_blank">Consultar por WhatsApp <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- SECCIÓN PORQUE ELEGIRNOS -->
+<section class="section estudio-section bg-dark" id="estudio">
+    <div class="container">
+        <div class="section-header text-center light-text">
+            <div class="section-tag gold">POR QUÉ ELEGIRNOS</div>
+            <h2 class="section-title">Firma Legal & Consultores "CARBONEL"</h2>
+            <p class="section-subtitle">Un respaldo jurídico sólido cimentado en la excelencia procesal y el compromiso ético.</p>
+        </div>
+
+        <!-- Cuadrícula ampliada a 4 elementos -->
+        <div class="estudio-grid">
+            <div class="estudio-box">
+                <div class="num">01</div>
+                <h4>Inmediatez de Respuesta</h4>
+                <p>Frente a detenciones u operativos, nos desplazamos a comisarías y juzgados al instante[cite: 10].</p>
+            </div>
+            <div class="estudio-box">
+                <div class="num">02</div>
+                <h4>Defensa Estratégica</h4>
+                <p>No aplicamos fórmulas genéricas. Cada expediente requiere un análisis meticuloso del marco legal.</p>
+            </div>
+            <div class="estudio-box">
+                <div class="num">03</div>
+                <h4>Trayectoria Sólida</h4>
+                <p>Más de 30 años defendiendo con firmeza los derechos y el patrimonio de nuestros patrocinados.</p>
+            </div>
+            <div class="estudio-box">
+                <div class="num">04</div>
+                <h4>Transparencia Total</h4>
+                <p>Mantenemos informado al cliente en cada hito del proceso con absoluta honestidad.</p>
+            </div>
+        </div>
+
+        <!-- Barra de métricas e indicadores de confianza -->
+        <div class="stats-bar">
+            <div class="stat-item">
+                <h3>30+</h3>
+                <p>Años de Experiencia</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Atención de Urgencia</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Confidencialidad Absoluta</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- SECCIÓN ORIENTACIÓN Y ARTÍCULOS JURÍDICOS -->
+<section class="section noticias-dinamica" id="noticias">
+    <div class="container">
+        <div class="section-header text-center light-text">
+            <span class="section-tag">ORIENTACIÓN JURÍDICA</span>
+            <h2 class="section-title">Soluciones y Artículos de Interés</h2>
+            <p class="section-subtitle">Absolvemos las dudas legales más frecuentes de nuestros clientes con rigor y experiencia profesional.</p>
+        </div>
+
+        <div class="blog-grid-pro">
+            <!-- Tarjeta 1: Penal -->
+            <div class="blog-card-pro">
+                <div class="blog-img-container">
+                    <img src="abogadakaren.jpeg" alt="Derecho Penal Law Firm Carbonel">
+                    <span class="blog-badge penal">Derecho Penal</span>
+                </div>
+                <div class="blog-content">
+                    <div>
+                        <h3>¿Cuáles son tus derechos ante una intervención o detención policial?</h3>
+                        <p>Conoce los plazos máximos, la importancia del derecho al silencio y la intervención inmediata del abogado penalista.</p>
+                    </div>
+                    <a href="#contacto" class="blog-link">Consultar caso urgente <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2: Contratos -->
+            <div class="blog-card-pro">
+                <div class="blog-img-container">
+                    <img src="abogada1.jpeg" alt="Contratos Law Firm Carbonel">
+                    <span class="blog-badge contratos">Contratos & Inmobiliario</span>
+                </div>
+                <div class="blog-content">
+                    <div>
+                        <h3>Cláusulas clave antes de firmar un contrato de compraventa o alquiler</h3>
+                        <p>Evita penalidades ocultas y protege tu patrimonio familiar o comercial con una revisión legal especializada.</p>
+                    </div>
+                    <a href="#contacto" class="blog-link">Solicitar revisión <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3: Familia -->
+            <div class="blog-card-pro">
+                <div class="blog-img-container">
+                    <img src="doctor.jpeg" alt="Familia Law Firm Carbonel">
+                    <span class="blog-badge familia">Familia & Conciliación</span>
+                </div>
+                <div class="blog-content">
+                    <div>
+                        <h3>Guía rápida para tramitar sucesiones intestadas y acuerdos</h3>
+                        <p>Agiliza la regularización de bienes y herencias de forma segura a través de nuestros centros de conciliación.</p>
+                    </div>
+                    <a href="#contacto" class="blog-link">Iniciar trámite <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- SECCIÓN DE CASOS DE ÉXITO EN LA WEB PRINCIPAL -->
+<section id="casos-exito" class="seccion-casos-exito">
+    <div class="casos-container-general">
+        <span class="subtitulo-seccion">Trayectoria y Resultados</span>
+        <h2 class="titulo-seccion">Casos de Éxito Recientes</h2>
+        
+        <!-- ESTE ID ES VITAL PARA QUE JAVASCRIPT PINTE TUS CASOS -->
+        <div id="contenedorCasosExito" class="grid-casos-exito">
+            <!-- Las tarjetas del administrador aparecerán aquí automáticamente -->
+        </div>
+    </div>
+</section>
+
+
+<!-- SECCIÓN CONTACTO Y UBICACIÓN -->
+<!-- SECCIÓN CONTACTO Y UBICACIÓN -->
+<section class="section contacto bg-light" id="contacto">
+    <div class="container">
+        <div class="section-header text-center">
+            <div class="section-tag">CONTÁCTANOS</div>
+            <h2 class="section-title">Solicita tu Consulta Gratuita</h2>
+            <p class="section-subtitle">Déjanos tu mensaje o comunícate directamente con nuestros especialistas.</p>
+        </div>
+
+        <div class="contacto-grid">
+            <!-- Información de contacto -->
+            <div class="contacto-info-box">
+                <h3>Datos de Atención</h3>
+                <p>Estamos listos para evaluar tu caso y ofrecerte una estrategia defensiva eficaz.</p>
+
+                <div class="info-item">
+                    <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <h4>Dirección Principal:</h4>
+                        <!-- ID agregado aquí -->
+                        <p id="viewDirContacto">Manuel María Izaga 376A, Chiclayo - Perú</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                    <div>
+                        <h4>Teléfono / Central 24 Hours:</h4>
+                        <!-- IDs agregados aquí para el enlace y el texto -->
+                        <p><a id="viewTelContactoLink" href="tel:+51906380881"><span id="viewTelContacto">906 380 881</span></a></p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <h4>Correo Electrónico:</h4>
+                        <!-- IDs agregados aquí para el enlace y el texto -->
+                        <p><a id="viewMailContactoLink" href="mailto:jcarbonel627@gmail.com"><span id="viewMailContacto">jcarbonel627@gmail.com</span></a></p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon"><i class="fa-solid fa-clock"></i></div>
+                    <div>
+                        <h4>Horario de Atención:</h4>
+                        <p>Oficina: Lunes a Viernes de 8:00 am - 7:00 pm<br><strong>Urgencias Penales: Atención 24/7</strong></p>
+                    </div>
+                </div>
+            </div>
+
+                <!-- Formulario dinámico a WhatsApp -->
+                <div class="contacto-form-box">
+                    <form id="whatsappForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Completo *</label>
+                            <input type="text" id="nombre" class="form-control" placeholder="Ej. Juan Pérez" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="telefono">Teléfono / WhatsApp *</label>
+                                <input type="tel" id="telefono" class="form-control" placeholder="Ej. 987654321" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="especialidad">Materia Legal *</label>
+                                <select id="especialidad" class="form-control" required>
+                                    <option value="Derecho Penal (Urgencia 24/7)">Derecho Penal (Urgencia 24/7)</option>
+                                    <option value="Derecho Civil / Propiedad">Derecho Civil / Propiedad</option>
+                                    <option value="Derecho de Familia / Divorcio">Derecho de Familia / Divorcio</option>
+                                    <option value="Derecho Administrativo / Municipal">Derecho Administrativo / Municipal</option>
+                                    <option value="Redacción de Contratos">Redacción de Contratos</option>
+                                    <option value="Otra Consulta">Otra Consulta</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="mensaje">Breve Descripción de su Caso *</label>
+                            <textarea id="mensaje" rows="4" class="form-control" placeholder="Detalle brevemente la situación para orientarle..." required></textarea>
+                        </div>
+
+                        <button type="button" onclick="enviarAWhatsApp()" class="btn btn-gold btn-block">
+                            <i class="fa-brands fa-whatsapp"></i> Enviar Mensaje a WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- MAPA UBICACIÓN -->
+    <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.247650893047!2d-79.8425!3d-6.7705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x904cef26fa286379%3A0x8898f06fa7883b48!2sManuel%20Mar%C3%ADa%20Izaga%20376A%2C%20Chiclayo!5e0!3m2!1ses!2spe!4v1700000000000!5m2!1ses!2spe" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- PIE DE PÁGINA (FOOTER) -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <div class="footer-col">
+                <div class="logo footer-logo">
+                    <div class="logo-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+                    <div class="logo-text">
+                        <span class="brand-title">CARBONEL</span>
+                        <span class="brand-subtitle">LAW FIRM</span>
+                    </div>
+                </div>
+                <p>Consultoría Jurídica & Defensa Legal. Comprometidos con la excelencia y la defensa firme de sus derechos procesales.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/profile.php?id=100088370552320" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/estudiojuridicocarbonel/?hl=es" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/51906380881" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+
+            <div class="footer-col">
+                <h4>Enlaces Rápidos</h4>
+                <ul class="footer-links">
+                    <li><a href="#inicio"><i class="fa-solid fa-chevron-right"></i> Inicio</a></li>
+                    <li><a href="#nosotros"><i class="fa-solid fa-chevron-right"></i> Sobre Nosotros</a></li>
+                    <li><a href="#servicios"><i class="fa-solid fa-chevron-right"></i> Especialidades</a></li>
+                    <li><a href="#estudio"><i class="fa-solid fa-chevron-right"></i> Por qué Elegirnos</a></li>
+                    <li><a href="#noticias"><i class="fa-solid fa-chevron-right"></i> Orientación Legal</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Especialidades</h4>
+                <ul class="footer-links">
+                    <li><a href="#servicios"><i class="fa-solid fa-chevron-right"></i> Defensa Penal 24/7</a></li>
+                    <li><a href="#servicios"><i class="fa-solid fa-chevron-right"></i> Litigios Civiles</a></li>
+                    <li><a href="#servicios"><i class="fa-solid fa-chevron-right"></i> Derecho de Familia</a></li>
+                    <li><a href="#servicios"><i class="fa-solid fa-chevron-right"></i> Asuntos Municipales</a></li>
+                    <li><a href="#servicios"><i class="fa-solid fa-chevron-right"></i> Elaboración de Contratos</a></li>
+                </ul>
+            </div>
+
+                <div class="footer-col">
+                <h4>Atención Inmediata</h4>
+                <p class="emergency-tag">
+                    <a id="footerTelLink" href="tel:+51906380881" style="color: inherit; text-decoration: none;">
+                        <i class="fa-solid fa-phone"></i> <strong id="footerTelefono">906 380 881</strong>
+                    </a>
+                </p>
+                <p id="footerDireccion">Manuel María Izaga 376A, Chiclayo</p>
+                <p>Email: <span id="footerCorreo">jcarbonel627@gmail.com</span></p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container footer-bottom-content">
+                <p>&copy; 2026 Law Firm "CARBONEL". Todos los derechos reservados.</p>
+                <p>Chiclayo, Perú</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE PERMANENTE DE WHATSAPP -->
+    <a href="https://wa.me/51906380881?text=Hola,%20requiero%20asistencia%20legal%20urgente." class="whatsapp-float" target="_blank" aria-label="Contacto WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+        <span class="float-tooltip">Atención 24/7</span>
+    </a>
+
+    <!-- SCRIPT JS PRINCIPAL -->
+    <script src="scrip.js"></script>
+
+</body>
+</html>
